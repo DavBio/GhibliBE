@@ -22,6 +22,6 @@ app.use(cors());
 app.use(express.json());
 router(app, mongoDB);
 
-app.listen(port, () => {
-  console.log(`⚡️[server]: Server is running at https://localhost:${port}`);
+app.listen(port || 3000, () => {
+  console.log(`⚡️[server]: Server is running at https://localhost:${port || 3000}`);
 });
