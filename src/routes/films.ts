@@ -3,20 +3,20 @@ import { MongoClient } from 'mongodb';
 import { getOneFilm, getFilms, populateFilmsDB } from '../controllers/films';
 
 export function filmRoutes(app: Express, mongoDB: MongoClient) {
-    const GhibliDB = mongoDB.db('GhibliDB');
-  
+    const GhibliDB = mongoDB.db('Ghiblidb');
+
     app.get('/', async (req, res) => {
       const response = await getFilms(req, GhibliDB);
       res.send(response);
     });
   
-    app.get('/:filmId', async (req, res) => {
+    app.get('/film/:filmId', async (req, res) => {
       const response = await getOneFilm(req, GhibliDB);
       res.send(response);
     });
-  
+
     app.post('/populate', async (req, res) => {
-      const response = await populateFilmsDB (req, GhibliDB);
+      const response = await populateFilmsDB(req, GhibliDB);
       res.send(response);
     });
 };  

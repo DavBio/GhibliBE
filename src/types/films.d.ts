@@ -1,6 +1,6 @@
 import { ObjectId } from 'mongodb';
 
-export interface Films {
+export interface Film {
     _id: ObjectId;
     title: string;
     original_title: string;
