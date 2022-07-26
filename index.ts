@@ -6,24 +6,27 @@ import { router } from './src/routes'
 
 dotenv.config();
 
-const app: Express = express();
-const port = process.env.PORT;
-const uri = process.env.MONGO_URI;
+export const app = () => {
 
-const mongoDB = new MongoClient(uri);
+  const app: Express = express();
+  const port = process.env.PORT;
+  const uri = process.env.MONGO_URI;
 
-try {
-  mongoDB.connect();
-} catch (error) {
-  console.log('mongoDB connecting error', error);
-}
+  const mongoDB = new MongoClient(uri);
 
-app.use(cors());
-app.use(express.json());
-router(app, mongoDB);
+  try {
+    mongoDB.connect();
+  } catch (error) {
+    console.log('mongoDB connecting error', error);
+  }
 
-app.listen(port, () => {
-  console.log(`⚡️[server]: Server is running at https://localhost:${port}`);
-});
+  app.use(cors());
+  app.use(express.json());
+  router(app, mongoDB);
 
-export { app }; 
+  app.listen(port, () => {
+    console.log(`⚡️[server]: Server is running at https://localhost:${port}`);
+  });
+};
+
+app();
