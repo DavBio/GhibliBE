@@ -2,6 +2,9 @@
 API do Ghibli Films, site que mostra com uma lista de filmes do studio Ghibli. :movie_camera:
 ![Screenshot from 2022-07-28 16-31-56](https://user-images.githubusercontent.com/63478613/181622132-ae9df505-8ff0-4c96-9d44-a3dc340f45ec.png)
 
+
+Repositório front end: https://github.com/DavBio/GhibliFE
+
 ### Documentação da API
 https://documenter.getpostman.com/view/13440665/UzXPxGRs
 
@@ -18,7 +21,8 @@ Rode localmente com:
 - `npm run test`
 
 ### Deploy :rocket:
-https://ghibli-be.herokuapp.com/
+API: https://ghibli-be.herokuapp.com/
+Site: https://ghibli-fe.vercel.app/ 
  
 ### Base de dados
 A base de dados hospedada no MongoDB compas. 
