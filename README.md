@@ -2,6 +2,9 @@
 API do Ghibli Films, site que mostra uma lista de filmes do studio Ghibli. :movie_camera:
 ![Screenshot from 2022-07-28 16-31-56](https://user-images.githubusercontent.com/63478613/181622132-ae9df505-8ff0-4c96-9d44-a3dc340f45ec.png)
 
+#### Stack
+<b>Front end:</b> React, Typescript, Styled-components  
+<b>Back end:</b> NodeJS, Typescript, MongoDB, Jest
 
 Repositório front end: https://github.com/DavBio/GhibliFE
 
