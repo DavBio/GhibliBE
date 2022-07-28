@@ -79,7 +79,7 @@ export const populateFilmsDB = async (req: Request, GhibliDB: Db) => {
         });
 
         const deleteResponse = await FilmsCollection.deleteMany({});
-        const insertResponse = await FilmsCollection.insertMany(filmsToWrite);
+        const insertResponse = await FilmsCollection.insertMany(filmsToWrite.sort(() => Math.random() - 0.5));
 
         return JSON.stringify({ message: 'Database updated', status: 200 });
     } catch (error) {
