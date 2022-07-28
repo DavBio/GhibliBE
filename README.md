@@ -28,7 +28,7 @@ API: https://ghibli-be.herokuapp.com/
 Site: https://ghibli-fe.vercel.app/ 
  
 ### Base de dados
-A base de dados hospedada no MongoDB compas. 
+A base de dados hospedada no MongoDB compass. 
 Possui apenas uma collection: "films".
 
 exemplo de documento:
