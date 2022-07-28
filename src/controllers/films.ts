@@ -11,8 +11,8 @@ export const getFilms = async (req: Request, GhibliDB: Db) => {
         } = req;
 
         const currentPage: number = (() => {
-            if (!page || Number.isNaN(page)) {
-                return 0
+            if (!page || Number.isNaN(page) || Number(page) === 0) {
+                return 1;
             }
             return Number(page);
         })();
@@ -26,7 +26,7 @@ export const getFilms = async (req: Request, GhibliDB: Db) => {
             return JSON.stringify({ message: `Bad request: invalid page value. Total number of pages is ${totalPages}.`, status: 400 });
         }
 
-        const skipValue = currentPage * pageSize;
+        const skipValue = (currentPage - 1)  * pageSize;
         const films = await FilmsCollection.find().skip(skipValue).limit(pageSize).toArray();
 
         return JSON.stringify({ status: 200, data: { films, pagination } });

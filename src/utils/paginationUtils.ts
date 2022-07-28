@@ -6,10 +6,10 @@ export const generatePaginationValues = ({ count, currentPage }: { count: number
     return {
         totalItems: count,
         pageSize: PROJECTS_PER_PAGE,
-        isValidPage: currentPage < totalPages,
+        isValidPage: currentPage <= totalPages && currentPage !== 0,
         totalPages,
         currentPage,
-        hasPrevPage: currentPage !== 0,
-        hasNextPage: (currentPage + 1) < totalPages,
+        hasPrevPage: currentPage > 1,
+        hasNextPage: currentPage < totalPages,
     }
 }
